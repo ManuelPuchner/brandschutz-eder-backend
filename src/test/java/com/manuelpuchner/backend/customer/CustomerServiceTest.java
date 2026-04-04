@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,24 +38,23 @@ class CustomerServiceTest {
     void getAllCustomers_givenCustomersExist_thenReturnsAllCustomers() {
         Customer c1 = buildCustomer(1L, "Alice");
         Customer c2 = buildCustomer(2L, "Bob");
-        when(customerRepository.findAll()).thenReturn(List.of(c1, c2));
+        when(customerRepository.findAll(Sort.by("id").descending())).thenReturn(List.of(c1,c2));
 
         List<Customer> result = customerService.getAllCustomers();
 
         assertThat(result).hasSize(2);
         assertThat(result).extracting(Customer::getName).containsExactly("Alice", "Bob");
-        verify(customerRepository, times(1)).findAll();
+        verify(customerRepository, times(1)).findAll(Sort.by("id").descending());
     }
 
     @Test
     void getAllCustomers_givenNoCustomersExist_thenReturnsEmptyList() {
-        when(customerRepository.findAll()).thenReturn(List.of());
+        when(customerRepository.findAll(Sort.by("id").descending())).thenReturn(List.of());
 
         List<Customer> result = customerService.getAllCustomers();
 
         assertThat(result).isEmpty();
-        verify(customerRepository, times(1)).findAll();
-    }
+        verify(customerRepository, times(1)).findAll(Sort.by("id").descending());    }
 
     // -------------------------------------------------------------------------
     // createCustomer

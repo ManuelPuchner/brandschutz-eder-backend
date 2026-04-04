@@ -26,10 +26,10 @@ public class CustomerService {
 
     @Transactional
     public Customer createCustomer(CreateCustomerDTO createCustomerDTO) {
-        //Optional<GeoCoordinates> geoCoordinates = geocodingService.geocode(createCustomerDTO);
-        Optional<GeoCoordinates> geoCoordinates = Optional.empty();
+        Optional<GeoCoordinates> geoCoordinates = geocodingService.geocode(createCustomerDTO);
+        //Optional<GeoCoordinates> geoCoordinates = Optional.empty();
 
-        Customer customer = null;
+        Customer customer;
         if(geoCoordinates.isEmpty()) {
             customer = customerMapper.toCustomer(createCustomerDTO);
         } else {
@@ -66,8 +66,8 @@ public class CustomerService {
         customer.setCountry(newCustomer.getCountry());
         customer.setPhone(newCustomer.getPhone());
 
-        //Optional<GeoCoordinates> geoCoordinates = geocodingService.geocode(createCustomerDTO);
-        Optional<GeoCoordinates> geoCoordinates = Optional.empty();
+        Optional<GeoCoordinates> geoCoordinates = geocodingService.geocode(newCustomer);
+        //Optional<GeoCoordinates> geoCoordinates = Optional.empty();
 
         if(geoCoordinates.isPresent()) {
             customer.setLat(geoCoordinates.get().lat());
