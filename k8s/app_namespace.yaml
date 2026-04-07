@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: brandschutz-eder
+  labels:
+    app.kubernetes.io/name: brandschutz-eder
+    environment: production
