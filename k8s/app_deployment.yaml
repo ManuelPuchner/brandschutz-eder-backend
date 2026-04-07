@@ -12,6 +12,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
+      app: brandschutz-eder
       app.kubernetes.io/name: brandschutz-eder
   strategy:
     type: RollingUpdate
