@@ -78,4 +78,14 @@ public class CustomerService {
 
         return customer;
     }
+
+    public Customer getCustomerById(Long id) {
+        Optional<Customer> customerOptional = customerRepository.findById(id);
+
+        if(customerOptional.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer with id: " + id + " not found");
+        }
+
+        return customerOptional.get();
+    }
 }
