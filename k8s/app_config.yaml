@@ -10,9 +10,9 @@ metadata:
     argocd.argoproj.io/sync-wave: "1"
 data:
   SPRING_PROFILES_ACTIVE: prod
-  PORT: 8080
+  PORT: "8080"
   DB_HOST: postgres.postgres.svc.cluster.local
-  DB_PORT: 5432
+  DB_PORT: "5432"
   DB_NAME: brandschutz-eder
   JPA_DDL_AUTO: update
   JPA_SHOW_SQL: false
