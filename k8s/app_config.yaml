@@ -6,18 +6,13 @@ metadata:
   labels:
     app.kubernetes.io/name: brandschutz-eder
     app.kubernetes.io/component: config
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 data:
-  # Spring
   SPRING_PROFILES_ACTIVE: prod
-
-  # Server
   PORT: 8080
-
-  # Database
   DB_HOST: postgres.postgres.svc.cluster.local
   DB_PORT: 5432
   DB_NAME: brandschutz-eder
-
-  # JPA
   JPA_DDL_AUTO: update
   JPA_SHOW_SQL: false
