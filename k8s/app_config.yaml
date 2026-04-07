@@ -15,4 +15,4 @@ data:
   DB_PORT: "5432"
   DB_NAME: brandschutz-eder
   JPA_DDL_AUTO: update
-  JPA_SHOW_SQL: false
+  JPA_SHOW_SQL: "false"
