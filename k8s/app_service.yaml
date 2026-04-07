@@ -3,8 +3,6 @@ kind: Service
 metadata:
   labels:
     app: brandschutz-eder
-    app.kubernetes.io/name: brandschutz-eder
-    app.kubernetes.io/component: backend
   name: brandschutz-eder-service
   namespace: brandschutz-eder
 spec:

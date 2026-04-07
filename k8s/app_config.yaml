@@ -4,8 +4,7 @@ metadata:
   name: brandschutz-eder-config
   namespace: brandschutz-eder
   labels:
-    app.kubernetes.io/name: brandschutz-eder
-    app.kubernetes.io/component: config
+    app: brandschutz-eder
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 data:

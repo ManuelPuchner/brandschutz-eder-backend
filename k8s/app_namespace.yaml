@@ -3,5 +3,5 @@ kind: Namespace
 metadata:
   name: brandschutz-eder
   labels:
-    app.kubernetes.io/name: brandschutz-eder
+    app: brandschutz-eder
     environment: production

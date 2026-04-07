@@ -13,7 +13,6 @@ spec:
   selector:
     matchLabels:
       app: brandschutz-eder
-      app.kubernetes.io/name: brandschutz-eder
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -22,8 +21,7 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: brandschutz-eder
-        app.kubernetes.io/component: backend
+        app: brandschutz-eder
     spec:
       securityContext:
         runAsNonRoot: true
