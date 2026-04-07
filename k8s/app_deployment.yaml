@@ -32,7 +32,7 @@ spec:
       containers:
         - name: brandschutz-eder
           # Replace the tag with a Git SHA (e.g. :main-a1b2c3d) in production
-          image: ghcr.io/ManuelPuchner/brandschutz-eder-backend
+          image: ghcr.io/manuelpuchner/brandschutz-eder-backend
           imagePullPolicy: Always
           ports:
             - name: http
