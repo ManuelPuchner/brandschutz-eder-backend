@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: brandschutz-eder-tls
+  namespace: brandschutz-eder
+spec:
+  secretName: brandschutz-eder-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - brandschutz-eder-backend.manuelpuchner.duckdns.org
