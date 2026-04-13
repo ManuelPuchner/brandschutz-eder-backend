@@ -35,7 +35,10 @@ public class ContactRequestService {
     }
 
     public List<ContactRequest> getAllContactRequests() {
-        return contactRequestRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
+        return contactRequestRepository.findAll(Sort
+                .by("status").descending()
+                .and(Sort.by("createdAt").descending())
+        );
     }
 
     public ContactRequest findContactRequestById(Long id) {
