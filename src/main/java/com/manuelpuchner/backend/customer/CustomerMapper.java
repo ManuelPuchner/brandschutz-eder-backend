@@ -9,6 +9,7 @@ public class CustomerMapper {
         Customer customer = new Customer();
         customer.setName(createCustomerDTO.getName());
         customer.setCountry(createCustomerDTO.getCountry());
+        customer.setCity(createCustomerDTO.getCity());
         customer.setPostalcode(createCustomerDTO.getPostalcode());
         customer.setAddress(createCustomerDTO.getAddress());
         customer.setPhone(createCustomerDTO.getPhone());
@@ -28,6 +29,7 @@ public class CustomerMapper {
         customerDTO.setName(customer.getName());
         customerDTO.setAddress(customer.getAddress());
         customerDTO.setCountry(customer.getCountry());
+        customerDTO.setCity(customer.getCity());
         customerDTO.setPostalcode(customer.getPostalcode());
         customerDTO.setLat(customer.getLat());
         customerDTO.setLon(customer.getLon());

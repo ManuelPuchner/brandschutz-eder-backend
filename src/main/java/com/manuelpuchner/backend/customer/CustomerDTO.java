@@ -9,6 +9,7 @@ public class CustomerDTO {
 
     // geocoding api  https://nominatim.openstreetmap.org/search?<params>
     private String country;
+    private String city;
     private String postalcode;
     private String address;
 

@@ -61,6 +61,7 @@ public class CustomerService {
 
         System.out.println(customer);
         customer.setName(newCustomer.getName());
+        customer.setCity(newCustomer.getCity());
         customer.setAddress(newCustomer.getAddress());
         customer.setPostalcode(newCustomer.getPostalcode());
         customer.setCountry(newCustomer.getCountry());

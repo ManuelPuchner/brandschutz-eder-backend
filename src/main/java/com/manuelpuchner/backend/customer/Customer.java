@@ -23,6 +23,7 @@ public class Customer implements Serializable {
     // geocoding api  https://nominatim.openstreetmap.org/search?<params>
     private String country;
     private String postalcode;
+    private String city;
     private String address;
 
     private Double lat;
